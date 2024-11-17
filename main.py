@@ -13,13 +13,11 @@ def run(points: str) -> str:
     is_tiebreak = False
 
     for point in points:
-        # Sumar puntos
         if point == 'A':
             points_player_a += 1
         else:
             points_player_b += 1
-
-        #  tiebreak
+       
         if is_tiebreak:
             if points_player_a >= POINTS_TO_WIN_TIEBREAK and points_player_a - points_player_b >= 2:
                 games_player_a += 1
@@ -37,8 +35,6 @@ def run(points: str) -> str:
                 games_player_a = games_player_b = 0
             continue
 
-
-        # saber ls juegos
         if points_player_a >= POINTS_TO_WIN_GAME and points_player_a - points_player_b >= 2:
             games_player_a += 1
             points_player_a = points_player_b = 0
@@ -46,7 +42,6 @@ def run(points: str) -> str:
             games_player_b += 1
             points_player_a = points_player_b = 0
 
-        # saber los set
         if games_player_a == GAMES_TO_WIN_SET and games_player_b == GAMES_TO_WIN_SET:
             is_tiebreak = True
             points_player_a = points_player_b = 0
