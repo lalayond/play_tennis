@@ -3,7 +3,6 @@ def run(points: str) -> str:
     GAMES_TO_WIN_SET = 6
     POINTS_TO_WIN_TIEBREAK = 7
 
-   
     games_player_a = 0
     games_player_b = 0
     sets_player_a = 0
