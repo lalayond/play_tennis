@@ -35,6 +35,15 @@ def run(points: str) -> str:
                 is_tiebreak = False
                 games_player_a = games_player_b = 0
             continue
+            
+        #si es empate 40-40
+        if points_player_a >= POINTS_TO_WIN_GAME and points_player_a - points_player_b >= 2:
+            games_player_a += 1
+            points_player_a = points_player_b = 0
+        elif points_player_b >= POINTS_TO_WIN_GAME and points_player_b - points_player_a >= 2:
+            games_player_b += 1
+            points_player_a = points_player_b = 0
+
 
         # saber ls juegos
         if points_player_a >= POINTS_TO_WIN_GAME and points_player_a - points_player_b >= 2:
