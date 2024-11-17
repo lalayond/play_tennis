@@ -22,12 +22,14 @@ def run(points: str) -> str:
         #  tiebreak
         if is_tiebreak:
             if points_player_a >= POINTS_TO_WIN_TIEBREAK and points_player_a - points_player_b >= 2:
+                games_player_a += 1
                 sets_player_a += 1
                 result += f"{games_player_a}-{games_player_b} "
                 points_player_a = points_player_b = 0
                 is_tiebreak = False
                 games_player_a = games_player_b = 0
             elif points_player_b >= POINTS_TO_WIN_TIEBREAK and points_player_b - points_player_a >= 2:
+                games_player_b += 1
                 sets_player_b += 1
                 result += f"{games_player_a}-{games_player_b} "
                 points_player_a = points_player_b = 0
